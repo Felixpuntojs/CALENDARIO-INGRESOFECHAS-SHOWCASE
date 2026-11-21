@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agenda Calendario</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Login Screen -->
+  <div id="loginScreen" class="login-container">
+    <div class="login-box">
+      <h1>Calendario Antonella</h1>
+      <p>Ingresa la contraseña para acceder</p>
+      <input type="password" id="passwordInput" placeholder="Contraseña" autocomplete="off"/>
+      <button onclick="checkPassword()" id="loginBtn">Entrar</button>
+      <div id="loginError" style="display:none;" class="login-error">Contraseña incorrecta</div>
+    </div>
+  </div>
+
+  <!-- Calendar App -->
+  <div id="appContainer" class="app-container" style="display:none;">
+    <div class="agenda-container">
+      <h2>Agenda Calendario</h2>
+    <div class="calendar-wrapper">
+      <div class="calendar-header">
+        <button id="prevMonth">&lt;</button>
+        <span id="calendarMonth"></span>
+        <button id="nextMonth">&gt;</button>
+      </div>
+      <div class="calendar-grid" id="calendarGrid"></div>
+    </div>
+    <div id="eventDetail" class="event-detail" style="display:none;"></div>
+    <form id="addEventForm" class="add-event-form">
+      <h3>
+        Agregar evento para los días: <span id="selectedDatesLabel"></span>
+      </h3>
+      <input
+        type="text"
+        placeholder="Descripción del evento"
+        id="eventText"
+        autocomplete="off"
+      />
+      <button type="submit">Agregar Evento</button>
+    </form>
+    <div class="events-list">
+      <h3>Eventos para el mes</h3>
+      <ul id="eventsList"></ul>
+    </div>
+  </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
